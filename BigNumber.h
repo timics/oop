@@ -10,8 +10,8 @@ class BigNumber
         ~BigNumber(); /**< The destructor */
         void show(); /**< A function that prints the decimal representation of our BigNumber */
         void operator =(BigNumber x); /**< We overload the assignment operator to allow assignment between big numbers*/
-        int operator ==(BigNumber x); /**< We overload the equality operator operator to allow checking the equality big numbers*/
-        int operator >(BigNumber x); /**< We overload the "greater than" operator to allow comparing big numbers*/
+        bool operator ==(BigNumber x); /**< We overload the equality operator operator to allow checking the equality big numbers*/
+        bool operator >(BigNumber x); /**< We overload the "greater than" operator to allow comparing big numbers*/
         BigNumber operator +(BigNumber x); /**< We overload the addition operator to allow addition between big numbers*/
         BigNumber operator -(BigNumber x); /**< We overload the subtraction operator to allow subtraction between big numbers*/
         BigNumber operator *(int x); /**<We overload the multiplication operator to allow multiplying a big number and an int*/
@@ -43,7 +43,7 @@ BigNumber::~BigNumber()
 void BigNumber::show()
 {
     for(int i=vec[0];i>0;--i)
-        printf("%d",vec[i]);
+        std::cout<<vec[i];
 }
 
 void BigNumber::operator =(BigNumber x)
@@ -54,7 +54,7 @@ void BigNumber::operator =(BigNumber x)
     return;
 }
 
-int BigNumber::operator ==(BigNumber a)
+bool BigNumber::operator ==(BigNumber a)
 {
     if(vec[0]!=a.vec[0])
         return 0;
@@ -67,7 +67,7 @@ int BigNumber::operator ==(BigNumber a)
     return 1;
 }
 
-int BigNumber::operator >(BigNumber a)
+bool BigNumber::operator >(BigNumber a)
 {
     if(vec[0]>a.vec[0])
         return 1;
