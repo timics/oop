@@ -5,16 +5,16 @@ class BigNumber
         int *vec;
 
     public:
-        BigNumber();
-        BigNumber(int x);
-        ~BigNumber();
-        void show();
-        void operator =(BigNumber x);
-        int operator ==(BigNumber x);
-        int operator >(BigNumber x);
-        BigNumber operator +(BigNumber x);
-        BigNumber operator -(BigNumber x);
-        BigNumber operator *(int x);
+        BigNumber(); /**< A constructor */
+        BigNumber(int x); /**< Another constructor, that initializes out BigNumber with an int value */
+        ~BigNumber(); /**< The destructor */
+        void show(); /**< A function that prints the decimal representation of our BigNumber */
+        void operator =(BigNumber x); /**< We overload the assignment operator to allow assignment between big numbers*/
+        int operator ==(BigNumber x); /**< We overload the equality operator operator to allow checking the equality big numbers*/
+        int operator >(BigNumber x); /**< We overload the "greater than" operator to allow comparing big numbers*/
+        BigNumber operator +(BigNumber x); /**< We overload the addition operator to allow addition between big numbers*/
+        BigNumber operator -(BigNumber x); /**< We overload the subtraction operator to allow subtraction between big numbers*/
+        BigNumber operator *(int x); /**<We overload the multiplication operator to allow multiplying a big number and an int*/
 };
 
 BigNumber::BigNumber()
